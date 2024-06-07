@@ -1,0 +1,38 @@
+@use "variaveis";
+.header {
+  z-index: 1;
+  position: sticky;
+  top: -16px;
+  left: 0;
+  background-color: variaveis.$corDeFundoHeader;
+  
+  align-items: center;
+  
+  &__logo {
+      img {
+          width: 110px;
+        }
+    }
+    &__container {
+        padding: 16px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        max-height: 56px;
+    
+  }
+  &__links {
+    display: flex;
+  }
+  .box {
+    display: flex;
+    align-items: center;
+  }
+
+  .text {
+    font-size: 13px;
+    color: variaveis.$corDeTextoPrimario;
+    
+  }
+}

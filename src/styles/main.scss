@@ -1,0 +1,96 @@
+@use "variaveis";
+@use "header";
+// @use "hero";
+
+// IMPORTANDO FONTE
+@font-face {
+  font-family: NetflixSans;
+  src: url(../../assets/NetflixSans-Regular.otf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: NetflixSans;
+  src: url(../../assets/NetflixSans-Bold.otf);
+  font-weight: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: NetflixSans, sans-serif;
+  list-style: none;
+}
+
+body {
+  background-color: variaveis.$corDeFundo;
+}
+
+// ESTILIZAÇÃO DE TEXTO
+@mixin text($fontSize: 16px) {
+  font-size: $fontSize;
+  line-height: $fontSize + 6px;
+  color: variaveis.$corDeTextoPrimario;
+}
+@mixin title($fontSize: 30px) {
+  @include text($fontSize);
+  color: variaveis.$corDeTextoPrimario;
+}
+
+.title--big {
+  @include title();
+}
+
+.title--medium {
+  @include title(24px);
+}
+
+.text--medium {
+  @include text();
+  &-silver {
+    color: variaveis.$corDeTextoSecundario;
+  }
+}
+
+.text--small {
+  @include text(14px);
+  &-silver {
+    color: variaveis.$corDeTextoSecundario;
+  }
+}
+
+// ESTILIZAÇÃO DOS BOTÕES
+
+.button {
+  font-size: 15px;
+  padding: 9px 40px;
+  margin: 0 0 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 2px;
+  line-height: 17px;
+  min-height: 0;
+
+  &--red {
+    color: variaveis.$corDeTextoPrimario;
+    background-color: variaveis.$corDeFundoBotaoPrimario;
+    border: 1px solid variaveis.$corDeFundoBotaoPrimario;
+    &:hover {
+      background-color: lighten(
+        $color: variaveis.$corDeFundoBotaoPrimario,
+        $amount: 3%
+      );
+    }
+  }
+  &--in {
+    padding: 9px 24px;
+    color: variaveis.$corDeTextoPrimario;
+    border: 1px solid #888;
+    &:hover {
+      background-color: lighten($color: variaveis.$corDeFundo, $amount: 3%);
+    }
+  }
+}
