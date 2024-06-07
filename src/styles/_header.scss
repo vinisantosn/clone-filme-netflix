@@ -2,10 +2,9 @@
 .header {
   z-index: 1;
   position: sticky;
-  top: -16px;
+  top: 0;
   left: 0;
-  background-color: variaveis.$corDeFundoHeader;
-  
+  background-color: variaveis.$corDeFundoHeader;  
   align-items: center;
   
   &__logo {
