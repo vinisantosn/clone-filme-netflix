@@ -6,8 +6,9 @@
 @font-face {
   font-family: NetflixSans;
   src: url(../../assets/NetflixSans-Regular.otf);
-  font-weight: 400;
+  font-weight: 400, 500;
 }
+
 @font-face {
   font-family: NetflixSans;
   src: url(../../assets/NetflixSans-Bold.otf);
@@ -17,8 +18,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: NetflixSans, sans-serif;
+  // box-sizing: border-box;
+  font-family:   Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
   list-style: none;
 }
 
@@ -43,6 +44,7 @@ body {
 
 .title--medium {
   @include title(24px);
+  font-weight: 500;
 }
 
 .text--medium {
@@ -55,6 +57,7 @@ body {
 .text--small {
   @include text(14px);
   &-silver {
+    @include text(14px);
     color: variaveis.$corDeTextoSecundario;
   }
 }
@@ -62,17 +65,26 @@ body {
 // ESTILIZAÇÃO DOS BOTÕES
 
 .button {
+  border: 0;
+  border-radius: 2px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: .1px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  position: relative;
+
   font-size: 15px;
   padding: 9px 40px;
   margin: 0 0 0 8px;
-  display: flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 2px;
   line-height: 17px;
   min-height: 0;
+  font-weight: 500;
 
   &--red {
     color: variaveis.$corDeTextoPrimario;
@@ -93,4 +105,8 @@ body {
       background-color: lighten($color: variaveis.$corDeFundo, $amount: 3%);
     }
   }
+}
+
+.container{
+  margin-top: 56px;  
 }
